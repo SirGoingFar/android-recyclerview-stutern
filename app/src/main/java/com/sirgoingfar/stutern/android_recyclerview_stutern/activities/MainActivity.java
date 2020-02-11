@@ -29,11 +29,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //Button: "Multiple Layouts Item"
+        //Button: "Multiple Layouts Item - Method 1"
         findViewById(R.id.cv_option_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MultipleLayoutItemActivity.class));
+                startActivity(new Intent(MainActivity.this, MultipleLayoutItemMtd1Activity.class));
+            }
+        });
+
+        //Button: "Multiple Layouts Item - Method 2"
+        findViewById(R.id.cv_option_3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MultipleLayoutItemMth2Activity.class));
             }
         });
     }

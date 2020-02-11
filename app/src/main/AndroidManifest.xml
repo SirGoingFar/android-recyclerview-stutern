@@ -13,17 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
         <activity
-            android:name=".activities.MultipleLayoutItemActivity"
+            android:name=".activities.MultipleLayoutItemMth2Activity"
             android:label="@string/text_status"
             android:parentActivityName=".activities.MainActivity" />
-
+        <activity
+            android:name=".activities.MultipleLayoutItemMtd1Activity"
+            android:label="@string/text_status"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.SingleLayoutItemActivity"
             android:label="@string/text_chats"
             android:parentActivityName=".activities.MainActivity" />
-
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

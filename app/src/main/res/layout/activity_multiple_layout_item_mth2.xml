@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- User status -->
+        <include
+            android:id="@+id/user_status"
+            layout="@layout/layout_status_item" />
+
+        <!-- Divider 1 -->
+        <include
+            android:id="@+id/divider_1"
+            layout="@layout/layout_status_divider" />
+
+        <!-- Recent Update RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/rv_recent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_status_item" />
+
+        <!-- Divider 2 -->
+        <include
+            android:id="@+id/divider_2"
+            layout="@layout/layout_status_divider" />
+
+        <!-- Viewed Update RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/rv_viewed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_status_item" />
+
+        <include
+            android:id="@+id/divider_3"
+            layout="@layout/layout_status_divider" />
+
+        <!-- Muted Update RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/rv_muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_status_item" />
+    </LinearLayout>
+
+</ScrollView>

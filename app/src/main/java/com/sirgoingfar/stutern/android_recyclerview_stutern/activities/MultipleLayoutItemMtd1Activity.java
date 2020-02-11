@@ -10,14 +10,14 @@ import com.sirgoingfar.stutern.android_recyclerview_stutern.R;
 import com.sirgoingfar.stutern.android_recyclerview_stutern.adapters.StatusAdapter;
 import com.sirgoingfar.stutern.android_recyclerview_stutern.models.StatusData;
 
-public class MultipleLayoutItemActivity extends AppCompatActivity {
+public class MultipleLayoutItemMtd1Activity extends AppCompatActivity {
 
     private StatusAdapter statusAdapter = new StatusAdapter(new StatusData());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multiple_layout_item);
+        setContentView(R.layout.activity_multiple_layout_item_mth1);
         setupRecyclerView();
     }
 
