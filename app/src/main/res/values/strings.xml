@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">android-recyclerview-stutern</string>
+    <string name="app_name">StuternApp</string>
+    <string name="text_welcome">Welcome</string>
+    <string name="text_pick_an_option">Pick an option</string>
+    <string name="text_chats">Chats</string>
+    <string name="text_contact_name">Contact Name</string>
+    <string name="text_msg_preview">You: Yea! It seems like a good idea to me</string>
+    <string name="text_time">11:45 AM</string>
+    <string name="text_1">1</string>
+    <string name="text_multiple_layout_item">Multiple Layout Item</string>
+    <string name="text_single_layout_item">Single Layout Item</string>
+    <string name="text_just_now">Just now</string>
+    <string name="text_recent_updates">Recent updates</string>
+    <string name="text_status">Status</string>
+    <string name="text_collapse_icon">collapse_icon</string>
 </resources>
