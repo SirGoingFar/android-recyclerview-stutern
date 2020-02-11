@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sirgoingfar.stutern.android_recyclerview_stutern">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -8,8 +11,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".activities.MultipleLayoutItemMth2Activity"
+            android:label="@string/text_status"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity
+            android:name=".activities.MultipleLayoutItemMtd1Activity"
+            android:label="@string/text_status"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity
+            android:name=".activities.SingleLayoutItemActivity"
+            android:label="@string/text_chats"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
