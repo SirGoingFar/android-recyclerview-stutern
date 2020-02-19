@@ -39,7 +39,6 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     }
 
     @Override
-
     public void onBindViewHolder(@NonNull final ChatViewHolder holder, int position) {
 
         final int currentPosition = holder.getAdapterPosition();

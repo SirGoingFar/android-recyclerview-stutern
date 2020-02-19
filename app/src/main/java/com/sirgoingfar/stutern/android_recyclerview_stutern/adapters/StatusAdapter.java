@@ -25,23 +25,23 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusViewHolder> {
     private int viewedUpdateHeaderPos = 0;
     private int mutedUpdateHeaderPos = 0;
 
-    private List<Status> allStatuses = new ArrayList<>();
+    private List<Status> allStatusUpdates = new ArrayList<>();
 
     public StatusAdapter(StatusData statusData) {
         this.statusData = statusData;
+        setPositionIndex();
+        prepareParentList();
     }
 
     @NonNull
     @Override
     public StatusViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
-        setPositionIndex();
         View view = LayoutInflater.from(parent.getContext()).inflate(getPositionLayout(position), parent, false);
         return new StatusViewHolder(view, reduceToType(position));
     }
 
     @Override
     public void onBindViewHolder(@NonNull StatusViewHolder holder, int position) {
-        setPositionIndex();
         holder.bindData(getStatusDataWith(holder.getAdapterPosition()));
     }
 
@@ -63,7 +63,6 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusViewHolder> {
 
     private StatusViewType reduceToType(@LayoutRes int position) {
         StatusViewType viewType = StatusViewType.STATUS;
-        setPositionIndex();
 
         if (position == 0)
             viewType = StatusViewType.USER_STATUS;
@@ -89,8 +88,6 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusViewHolder> {
 
     private Status getStatusDataWith(int position) {
 
-        prepareParentList();
-
         Status status = null;
 
         if (position != recentUpdateHeaderPos
@@ -106,18 +103,18 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusViewHolder> {
             else if (position > mutedUpdateHeaderPos)
                 statusPosition = position - 3;
 
-            status = allStatuses.get(statusPosition);
+            status = allStatusUpdates.get(statusPosition);
         }
 
         return status;
     }
 
     private void prepareParentList() {
-        allStatuses.clear();
+        allStatusUpdates.clear();
 
-        allStatuses.addAll(statusData.getUserStatusList());
-        allStatuses.addAll(statusData.getRecentStatusList());
-        allStatuses.addAll(statusData.getViewedStatusList());
-        allStatuses.addAll(statusData.getMutedStatusList());
+        allStatusUpdates.addAll(statusData.getUserStatusList());
+        allStatusUpdates.addAll(statusData.getRecentStatusList());
+        allStatusUpdates.addAll(statusData.getViewedStatusList());
+        allStatusUpdates.addAll(statusData.getMutedStatusList());
     }
 }
