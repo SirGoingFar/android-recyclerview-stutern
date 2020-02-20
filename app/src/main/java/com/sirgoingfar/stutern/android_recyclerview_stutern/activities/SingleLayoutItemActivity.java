@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sirgoingfar.stutern.android_recyclerview_stutern.R;
@@ -30,9 +31,9 @@ public class SingleLayoutItemActivity extends AppCompatActivity implements OnCha
     private void setupRecyclerView() {
         chatRecyclerView = findViewById(R.id.rv_chat);
         chatRecyclerView.setHasFixedSize(true);
-        /*chatRecyclerView.setLayoutManager(
-                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        );*/
+        chatRecyclerView.setLayoutManager(
+                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        );
         chatRecyclerView.setAdapter(chatAdapter);
         chatAdapter.refreshChatList(DataFactory.getChatListData());
 

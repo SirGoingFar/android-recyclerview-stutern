@@ -14,4 +14,6 @@
     <string name="text_recent_updates">Recent updates</string>
     <string name="text_status">Status</string>
     <string name="text_collapse_icon">collapse_icon</string>
+    <string name="text_muted_updates">Muted updates</string>
+    <string name="text_viewed_updates">Viewed updates</string>
 </resources>
