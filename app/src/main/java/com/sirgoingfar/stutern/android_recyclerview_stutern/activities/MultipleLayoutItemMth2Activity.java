@@ -26,7 +26,7 @@ public class MultipleLayoutItemMth2Activity extends AppCompatActivity {
 
     private void setupViews() {
         //Set up User Status
-        Status userStatus = DataFactory.getUserStatusList().get(0);
+        List<Status> userStatuses = DataFactory.getUserStatusList();
 
         //Recent Updates
         View header1 = findViewById(R.id.divider_1);
@@ -48,6 +48,7 @@ public class MultipleLayoutItemMth2Activity extends AppCompatActivity {
         //Muted Updates
         View header3 = findViewById(R.id.divider_3);
         ((TextView) header3.findViewById(R.id.tv_header_label)).setText(getString(R.string.text_muted_updates));
+        header3.findViewById(R.id.iv_collapse).setVisibility(View.VISIBLE);
         List<Status> mutedUpdates = DataFactory.getMutedStatusList();
         StatusAdapterV2 mutedUpdateAdapter = new StatusAdapterV2(mutedUpdates);
         RecyclerView mutedRv = findViewById(R.id.rv_muted);

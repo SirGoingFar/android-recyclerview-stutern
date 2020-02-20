@@ -55,16 +55,21 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusViewHolder> {
         return position;
     }
 
+    /**
+     *
+     * This function has to be called whenever there's a change to "allStatusUpdates"
+     *
+     * */
     private void setPositionIndex() {
         recentUpdateHeaderPos = statusData.getUserStatusList().size();
         viewedUpdateHeaderPos = recentUpdateHeaderPos + statusData.getRecentStatusList().size();
         mutedUpdateHeaderPos = viewedUpdateHeaderPos + statusData.getViewedStatusList().size();
     }
 
-    private StatusViewType reduceToType(@LayoutRes int position) {
+    private StatusViewType reduceToType(int position) {
         StatusViewType viewType = StatusViewType.STATUS;
 
-        if (position == 0)
+        if (position == 0 || position <= (statusData.getUserStatusList().size() - 1))
             viewType = StatusViewType.USER_STATUS;
         else if (position == recentUpdateHeaderPos)
             viewType = StatusViewType.RECENT_UPDATE;
